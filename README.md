@@ -216,7 +216,7 @@ dividend = 5
 quotient = divisor // dividend
 remainder = divisor % dividend
 
-print(quotient * dividend + remainder, "=", divisor)
+print(divisor, " = ", quotient * dividend + remainder)
 ```
 
 There you go. This is the first formula we understood. We took the official
@@ -236,7 +236,7 @@ dividend = 5
 quotient = divisor // dividend
 remainder = divisor % dividend
 
-print(quotient * dividend + remainder, "=", divisor)
+print(divisor, " = ", quotient * dividend + remainder)
 ```
 
 This example still shows a correct expression `29 = 29`. Now, let's see if you
@@ -248,7 +248,7 @@ dividend = 5
 quotient = divisor // dividend
 remainder = divisor % dividend
 
-print(quotient * divisor + remainder, "=", divisor)
+print(divisor, " = ", quotient * divisor + remainder)
 ```
 
 Why is this code showing `149 = 29`?
@@ -261,12 +261,12 @@ y = 5
 z = x // y
 w = x % y
 
-print(z * x + w, "=", x)
+print(x, " = ", z * x + w)
 ```
 
-This is why you should name your variables appropriately. Because anybody that
-looks over the code needs to understand what it does. Now what happens when you
-start changing things around?
+This is why you should name your variables appropriately. Anybody that looks
+over the code needs to understand what it does. Now what happens when you start
+changing things around?
 
 ```python
 y = 5
@@ -274,24 +274,25 @@ x = 29
 w = x % y
 z = y // x
 
-print(y * w + z, "=", x)
+print(x, " = ", y * w + z)
 ```
 
 Can you easily make this code work? Is it clear what the code is trying to
 achieve? What about below code?
 
 ```python
-print(29 // 5 * 5 + 29 % 5, "=", 29)
+print(29, " = ", 29 // 5 * 5 + 29 % 5)
 ```
 
-It is the same formula that we wanted to check and the same variables. But you
-have no clue what those numbers represent. It is just a bunch of operations.
+It is the same formula that we wanted to check and the same variables. If you're
+seeing this for the first time, most likely, you have no clue what those numbers
+represent. It is just a bunch of operations.
 
-### Conclusion
+## Conclusion
 
-We have looked at print method and what it does. We've seen how it is useful 
-when writing and validating code. We've also taken a small dive into why you need
-to name your variables correctly and follow the official definitions of the
+We have looked at print method and what it does. We've seen how it is useful
+when writing and validating code. We've also taken a small dive into why you
+need to name your variables correctly and follow the official definitions of the
 things you operate with. In our case we used a simple division, but it can be
 anything. We'll further explore more sophisticated examples. However, we'll do
 so slowly, again, with:
@@ -299,20 +300,159 @@ so slowly, again, with:
 * a great emphasis on printing and understanding what the code does
 * naming the variables properly to align with standard definitions
 
-### Definitions
+## Definitions
 
-**method** - usually anything before round brackets - (). It is some code already
-written that the computer knows about. We will be also writing methods further. Example `print()`
+**method** - usually anything before round brackets - (). It is some code
+already written that the computer knows about. We will be also writing methods
+further. Example `print()`
 
-**parameter** - what a method needs to actually work. Without the right parameters
-methods will throw errors or not work properly. Prameters are given into methods 
-separated by commas. Example `print(3, 5)` or print `print(5, 7, "3")`
+**parameter** - what a method needs to actually work. Without the right
+parameters methods will throw errors or not work properly. Prameters are given
+into methods separated by commas. Example `print(3, 5)` or
+print `print(5, 7, "3")`
 
 **variable** - a name we will use for any information. We used variables for
- numbers that represented **divisor** or **dividend**, but they can be much more.
+numbers that represented **divisor** or **dividend**, but they can be much more.
 we will explore them further as the material gets more complicated. It is very
-important to name your variables correctly to show what they represent. The computer,
-however, does not care what the name of the variable is.
+important to name your variables correctly to show what they represent. The
+computer, however, does not care what the name of the variable is.
 
 **operand** - operands are symbols that represent operations. We used operands
 to make operations with numbers that we stored in variables.
+
+# 1 Divide and understand
+
+This is a very common tactic in solving difficult or big problems. You should
+find a way to solve 2 small problems instead of a large one. This will allow
+your attention to focus on one thing at a time. It will be a slow and steady way
+to reach a solution. In fact, this is the way we will ground ourselves in the
+future. We will find a simple problem that we can solve and, we will make
+progress on that.
+
+The process of finding simpler problems in a more complex problem will take some
+time to get used to or even to understand. Nevertheless, quite fast you will
+develop intution that will aid you with the process. By the time you will be
+programming real life applications, you will have mastered this art.
+
+## Printing again
+
+For the time being, since the problems are very simple we will use printing as
+our method of dividing the problem. That is at different moments in the code we
+will add print statements to make sure that by that point the code is doing what
+we expect it to do.
+
+A couple of rules to do so:
+
+* Always put the expected number left of the `=` sign. This is not a must, but
+  it is aligned with most of the information that comes later in the text.
+* Print only the information you want to verify. It might be tempting to print
+  everything, but the amount of information may overwhelm you.
+
+## A physics formula
+
+Having established the rules, let's imagine that you have to write the following
+program.
+
+```
+A program that calculates the number of km (distance) traveled for a train 
+moving at x meters per second (speed) for y hours (time). 
+
+Examples:
+x=24, y=2, d=172.8
+x=18, y=3, d=194.4
+```
+
+So, this all seems new and confusing for us. At least it might be. We have some
+notions there like **speed**, which is represented in meters per second, and
+**time**, which is represented in hours. So first thing we do is look up in a
+browser what formula we need to write down. The thing we want to do is
+`Calculate distance based on speed and time`.
+
+We can see there is a large number of already existing resources that do
+that. The formula presented and used is `distance = speed * time`. So the
+solution seems simple, right?
+
+Snippet 1.0
+```python
+x=24
+y=2
+
+d=x*y
+print(172.8, " = ", d)
+```
+
+However, running above program we get `172.8 = 48`, which does not seem right.
+To solve the mystery we should start looking into what the problem is about and
+is the formula correctly applied. For now let's assume that we checked some more
+resources and the formula `distance = speed * time` is indeed correct. So this
+will be our grounding factor. That means that somehow speed or time is not
+represented by the right number.
+
+Second part of the grounding process would be to look over the examples that we
+have and rewrite them in a more meaningful manner.
+
+```python
+speed_m_per_second = 24
+time_hours = 2
+distance_km = 172.8
+
+speed_m_per_second = 18
+time_hours = 3
+distance_km = 194.4
+```
+
+Let's take a look at our variables. We have speed measured in meters per second,
+time in hours, and distance in kilometers. It seems odd that speed is not
+measured in something that relates to time or distance. In other words, if we
+do a simple mathematical conversion to hte formula that we found online we get
+`speed = distance / time`. So, by this formula we see that our speed of 24
+meters per second must somehow be equal to 172.8 km per 2 hours. So the question
+next is "How can we convert it?". We look it up. We can search in our browser
+the question `convert m/s to km/h` and the first thing we see is a converter. 
+So, let's convert the data we have. So, according to the converter `24 m/s` is
+`86.4 km/h`. Let's put this value in our formula.
+
+```python
+speed_m_per_second = 24
+speed_km_per_hour = 86.4
+time_hours = 2
+distance_km = 172.8
+
+print(distance_km, " = ", speed_km_per_hour * time_hours)
+```
+
+Running the code we get `172.8 = 172.8`. So we found our solution. However, our
+code must convert the values automatically so we still need to solve another
+task `figure out the formula to convert speed m/s as km/h`. Nevertheless, this
+is a step towards solving the bigger problem. That is we divided the bigger
+problem into two smaller ones. Even if the conversion requires several such
+tasks to complete, at every step we will get closer and closer to the solution.
+
+Another search for `formula to convert m/s to km/h` and we see that 
+`1m = 1/1000 km` and `1s = 1/3600h` so `m/s = 18/5 km/h` or `m/s = 3.6 km.h`.
+
+Now all we have to do for our program to be complete is adding this coefficient.
+
+```python
+M_PER_S_TO_KM_PER_H = 3.6
+
+speed_m_per_second = 24
+speed_km_per_hour = speed_m_per_second * M_PER_S_TO_KM_PER_H
+time_hours = 2
+distance_km = 172.8
+
+print(distance_km, " = ", speed_km_per_hour * time_hours)
+```
+
+We run the program and see that everything works and that is it.
+
+# 2 Understand it in your own words
+
+A good form of showing understanding of anything is repeating something in your
+own words. In this chapter we will go through a simple exercise that will allow
+you to use programming to show yourself and others that you understood what is
+happening in the code. This is very important as you will have to learn many
+concepts and ideas, which are readily available in Internet. However, many of
+you might be tempted to just use code by copying it and this can lead to some
+issues that you will not be able to understand unless you understand the code.
+
