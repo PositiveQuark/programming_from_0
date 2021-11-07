@@ -71,7 +71,7 @@ anxiety levels.
 
 # 0 - Always find a way to ground yourself
 
-## What is grounding in this context?
+## 0.0 What is grounding in this context?
 
 The very basic of writing code is to have a proper moral set-up. That is one has
 to be prepared to morally handle all the stress that comes with this profession.
@@ -89,7 +89,7 @@ will have to spend time reviewing your code and be mindful when reviewing
 someone else's code. Do not just try to find errors in code because you have
 been pointed out to so many shortcomings.
 
-## How to ground oneself?
+## 0.1 How to ground oneself?
 
 The easiest way is to make sure you understand the task. Always ask for
 clarifications before making any assumptions. Even when you feel you understand
@@ -108,7 +108,7 @@ much older age. For example, at 50 - 60 years, people that regularly have been
 exercising will find that going through their daily routine is much easier when
 compared to people of same age that did not devote that much time to sport.
 
-# 1 - Print statement
+## 0.2 - Print statement
 
 **A statement is any line of code. It is a command that will be executed by your
 computer.** Along with this you should know that generally everything that goes
@@ -124,7 +124,7 @@ it does, just add some print statements to make it easier to understand. They
 generally help a lot. With time, you will see that there are more powerful
 tools, but for the time being let's make the most of it.
 
-## Print all the things
+### 0.2.0 You can print all the things
 
 Let's print something.
 
@@ -146,7 +146,7 @@ parameters. A parameter is what a method uses to execute. Parameters are given
 to a method separated by a comma. That is, without that parameter the method
 will throw an error. This is something that we will further explore.
 
-## What are the things we would want to print
+### 0.2.1 What are the things we would want to print
 
 So we know that we can print everything. Why do we want to print? Well, it is
 because we want to know. In the examples above we know what 3 is and printing it
@@ -167,7 +167,7 @@ will know that x is 3. So whenever you will use x, the computer will replace it
 with 3 when running the program. This will be very useful when you will have to
 work with variables and perform operations.
 
-## Operations with variables
+## 0.3 Operations with variables
 
 Basic operations in Python are:
 
@@ -288,7 +288,7 @@ It is the same formula that we wanted to check and the same variables. If you're
 seeing this for the first time, most likely, you have no clue what those numbers
 represent. It is just a bunch of operations.
 
-## Conclusion
+## 0.4 Conclusion
 
 We have looked at print method and what it does. We've seen how it is useful
 when writing and validating code. We've also taken a small dive into why you
@@ -300,7 +300,7 @@ so slowly, again, with:
 * a great emphasis on printing and understanding what the code does
 * naming the variables properly to align with standard definitions
 
-## Definitions
+## 0.5 Definitions
 
 **method** - usually anything before round brackets - (). It is some code
 already written that the computer knows about. We will be also writing methods
@@ -320,6 +320,44 @@ computer, however, does not care what the name of the variable is.
 **operand** - operands are symbols that represent operations. We used operands
 to make operations with numbers that we stored in variables.
 
+## 0.6 Let's practice methods and variables
+
+We've seen some examples of code and how it can work. Let's repeat some notions
+so that our eyes get used to understanding what they see. Below you will see
+everything we have to learn in this part.
+
+```python
+def this_is_a_mathod(method_parameter):
+  pass
+
+variable = 1
+another_variable = "it can be anything"
+
+THIS_IS_A_CONSTANT="it should not be changed"
+
+# method call
+this_is_a_method()
+```
+
+Taking everything by parts. Below is a **method definition**. It is called a 
+definition because it does that: it defines a new method. The word that you need
+to pay attention to is **def**. It acts as a signal that the current line is 
+a method definition. **def** is also referred to as a **keyword**. You cannot
+name your variables with **keywords**.
+
+```python
+def this_is_a_mathod(method_parameter):
+  pass
+```
+
+The method is composed of three parts:
+**method name** - this is a single name before the `()`. In this case it is
+`this_is_a_method`.
+**method parameters** - this is everything within the `()`. In this case it is
+`method_parameter`.
+**method body** - this is every line two spaces or more to the right after the 
+method name. In this case it is just the **keyword** pass.
+
 # 1 Divide and understand
 
 This is a very common tactic in solving difficult or big problems. You should
@@ -334,7 +372,7 @@ time to get used to or even to understand. Nevertheless, quite fast you will
 develop intution that will aid you with the process. By the time you will be
 programming real life applications, you will have mastered this art.
 
-## Printing again
+## 1.0 Printing again
 
 For the time being, since the problems are very simple we will use printing as
 our method of dividing the problem. That is at different moments in the code we
@@ -348,7 +386,7 @@ A couple of rules to do so:
 * Print only the information you want to verify. It might be tempting to print
   everything, but the amount of information may overwhelm you.
 
-## A physics formula
+## 1.1 A physics formula
 
 Having established the rules, let's imagine that you have to write the following
 program.
@@ -368,16 +406,17 @@ notions there like **speed**, which is represented in meters per second, and
 browser what formula we need to write down. The thing we want to do is
 `Calculate distance based on speed and time`.
 
-We can see there is a large number of already existing resources that do
-that. The formula presented and used is `distance = speed * time`. So the
-solution seems simple, right?
+We can see there is a large number of already existing resources that do that.
+The formula presented and used is `distance = speed * time`. So the solution
+seems simple, right?
 
 Snippet 1.0
-```python
-x=24
-y=2
 
-d=x*y
+```python
+x = 24
+y = 2
+
+d = x * y
 print(172.8, " = ", d)
 ```
 
@@ -403,12 +442,12 @@ distance_km = 194.4
 
 Let's take a look at our variables. We have speed measured in meters per second,
 time in hours, and distance in kilometers. It seems odd that speed is not
-measured in something that relates to time or distance. In other words, if we
-do a simple mathematical conversion to hte formula that we found online we get
+measured in something that relates to time or distance. In other words, if we do
+a simple mathematical conversion to hte formula that we found online we get
 `speed = distance / time`. So, by this formula we see that our speed of 24
 meters per second must somehow be equal to 172.8 km per 2 hours. So the question
 next is "How can we convert it?". We look it up. We can search in our browser
-the question `convert m/s to km/h` and the first thing we see is a converter. 
+the question `convert m/s to km/h` and the first thing we see is a converter.
 So, let's convert the data we have. So, according to the converter `24 m/s` is
 `86.4 km/h`. Let's put this value in our formula.
 
@@ -428,7 +467,7 @@ is a step towards solving the bigger problem. That is we divided the bigger
 problem into two smaller ones. Even if the conversion requires several such
 tasks to complete, at every step we will get closer and closer to the solution.
 
-Another search for `formula to convert m/s to km/h` and we see that 
+Another search for `formula to convert m/s to km/h` and we see that
 `1m = 1/1000 km` and `1s = 1/3600h` so `m/s = 18/5 km/h` or `m/s = 3.6 km.h`.
 
 Now all we have to do for our program to be complete is adding this coefficient.
@@ -455,4 +494,110 @@ happening in the code. This is very important as you will have to learn many
 concepts and ideas, which are readily available in Internet. However, many of
 you might be tempted to just use code by copying it and this can lead to some
 issues that you will not be able to understand unless you understand the code.
+In other words, doing things that you do not fully understand and hoping that
+everything will just work is not always the best approach. We will discuss an
+exception to this rule at the end of the chapter.
+
+In previous chapter we've seen in use some variable names that are a bit too
+much. `M_PER_S_TO_KM_PER_H` is probably the best example. `speed_km_per_hour`
+and `speed_m_per_second` can also be considered unusual, but they are a bit more
+readable. Is there a better name for the constant of `3.6`? We can start
+building up from `coefficient`. The reason I chose such a peculiar name is: It
+is the shortest way to explain what it exactly represents. That is I have
+consciously made a decision that the time spent on reading the name and
+remembering what it represents is much less than the time I would have spent
+understanding why I need it in the first place. You will have to make these
+choices all the time and the more time you spend in the beginning thinking of it
+the better your naming will be.
+
+One detail though. Never spend too much time on a variable name as it will never
+be perfect. It is very useful to spend some time on it and make sure that other
+people reading that code will understand what you want to say. Be sure that
+before that code gets pushed into a common repository someone would have already
+informed you about possible confusion with the name chosen.
+
+## 2.0 Your code changes with you
+
+Technically, the code changes with your understanding. If you start looking at
+things differently, you will start naming them differently. This will be hectic
+at first, but with time you will see that this is a crucial part in your daily
+routine. For example, when someone will suggest a different name to a variable
+they actually suggest to follow their understanding in explaining the values.
+Let's practice this for a while. What would be the best variable names for the
+following notions:
+
+* The white part of a human nail
+* Stepping over a lego
+* Discomfort when someone says something embarassing
+
+Now, to actual things you might need to work with:
+
+* The variable that is used to go over elements in a list
+* The variable used to describe a person's name
+* The variable representing the number of times you need to press keys to write
+  a work
+
+## 2.1 Let code tell your story, let variables be the ideas
+
+As you can see, human language already allows you to simplify what you say and
+how you say it. If you know the word, you use the word and rely that the reader
+will know the definition. If you do not know the definition, you invent it and
+leave it there for other confused people to understand.
+
+Going over the examples
+
+* `Lunula` - the white part of a human nail. But chances are that very few
+  people will know what this is. So I would have chosen `nailWhitePart` as the
+  best name.
+
+* `pain`, `misstep`, `prank` - this depends on the context of the discussion. If
+  you are telling the story of pain, this example will represent just that. If
+  you want to give example of a `wrong step` then the second definition would
+  work. So, use variable names to tell the idea and let the code be the story.
+
+* `vicarious` embarrassment - discomfort at seeing someone's embarrassment. And
+  vicarious means that you experience something through imagination based on
+  someone's experience. Best variable name would still be
+  `discomfortAtSomeonesEmbarrasment` as per example 1. Problem here is that
+  there is no short way to write it and still, there is more chance for someone
+  to understand this name as oposed to writing `vicarious`.
+
+Next up:
+
+* `index` - the variable that is used to go over elements in a list. Unlike
+  `lunula`, this is a term that most of you will use quite often so you should
+  use it. Every time you want to iterate over elements in an array use index to
+  represent the position of the element.
+
+* here it may be best to use the actual person's name i.e. `andreea`, if you
+  need this information. Like in a story, if the story is about `andreea`, make
+  sure you tell that. If this is something that relates to a lot of people,
+  use `person`, `personSad`, `personHappy`.
+
+* `noLetters` or `numberLetters` or more specific `noKeyPresses` - depending,
+  again what you want to measure or work with.
+
+## 2.2 Tricks I use
+
+* Start with classification from more general to more specific. That is why I
+  used `personSad` and not `sadPerson`. For simplicity the second form is
+  actually more readable, however, usually variable names are quite long because
+  systems are too comples to explain with 1 adjective. As a result, placing
+  general nouns at the start of variable name might help people find faster the
+  information they need. Again, if the story is about emotion, the name should
+  be `sadPerson`.
+
+* You can save characters on obvious names. Like, writing `personAndree` is
+  redundant. Also, words like `constant` or `var` or `string` and so on. These
+  can be inferred from the variable type or the way you write them.
+
+* Write the minimum words you would need to understand that variable without
+  looking up anything besides the code on the page. Even if the name is long,
+  this is a nice start. Example of real life
+  names `AbstractInterruptibleBatchPreparedStatementSetter` and it is not nice,
+  but to make it simpler you must do some tricks that will impact the way you
+  understand what the variable is.
+
+  
+
 
